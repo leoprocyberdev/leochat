@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Contact</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        .contact-count { font-size: 13px; color: #8696a0; }
+        .no-results { text-align: center; color: #8696a0; margin-top: 40px; font-size: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- HEADER BLOCK -->
+        <div class="top-header">
+            <div class="header-left">
+                <a href="dashboard.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <svg class="icon-svg back-arrow" viewBox="0 0 24 24"><path d="M21 11H6.83l6.58-6.59L12 3l-8 8 8 8 1.41-1.41L6.83 13H21z"/></svg>
+                </a>
+                <div style="display: flex; flex-direction: column; margin-left: 10px;">
+                    <span class="brand-title" style="font-size: 19px;">Select contact</span>
+                    <span class="contact-count" id="contactCount">Loading...</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <svg class="icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+        </div>
+
+        <!-- USERNAME SEARCH BOX -->
+        <div class="search-wrapper">
+            <div class="search-box">
+                <svg class="icon-svg search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" id="usernameSearchInput" placeholder="Search username...">
+            </div>
+        </div>
+
+        <!-- DYNAMIC CONTACTS LIST -->
+        <div class="list-scroll-view" style="padding-bottom: 20px;">
+            <div id="contactsContainer">
+                <!-- Data will be injected here by select_contact.js -->
+            </div>
+            <div class="no-results" id="noResultsMessage">No matching usernames found</div>
+        </div>
+    </div>
+
+    <!-- Use type="module" so imports work -->
+    <script type="module" src="js/select_contact.js"></script>
+</body>
+</html>
