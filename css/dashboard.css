@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+    background-color: #0b141a;
+    color: #e9edef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    background-color: #0b141a;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* --- OVERLAY MENU --- */
+.options-dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #1f2c34;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    width: 195px;
+    padding: 6px 0;
+    z-index: 100;
+    display: none;
+}
+.options-dropdown.show {
+    display: block;
+}
+.dropdown-item {
+    padding: 13px 20px;
+    font-size: 15px;
+    color: #e9edef;
+    cursor: pointer;
+}
+.dropdown-item:active {
+    background-color: #111b21;
+}
+
+/* --- APP HEADER --- */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 16px 8px 16px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.brand-title {
+    font-size: 22px;
+    font-weight: 500;
+}
+.header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.icon-svg {
+    width: 22px;
+    height: 22px;
+    fill: #aebac1;
+}
+
+/* --- SEARCH BAR --- */
+.search-wrapper {
+    padding: 4px 14px 12px 14px;
+}
+.search-box {
+    background-color: #202c33;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 12px;
+}
+.search-box input {
+    background: none;
+    border: none;
+    color: #d1d7db;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+}
+.search-box input::placeholder { color: #8696a0; }
+.search-icon { width: 18px; height: 18px; fill: #8696a0; }
+
+/* --- ROUTING PANELS --- */
+.tab-panel {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+.tab-panel.active {
+    display: flex;
+}
+.list-scroll-view {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 85px;
+}
+
+/* --- SUB FILTER CAPSULES --- */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 8px 16px;
+}
+.tab {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #202c33;
+    color: #8696a0;
+    cursor: pointer;
+}
+.tab.active {
+    background-color: #0c3a2f;
+    color: #00a884;
+}
+
+/* --- CONVERSATIONS LAYOUTS --- */
+.archived-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+}
+.archived-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 16px;
+}
+.archived-icon { fill: #8696a0; }
+.archived-count { color: #00a884; font-size: 13px; font-weight: 600; }
+
+.chat-item, .channel-feed-item, .call-log-row {
+    display: flex;
+    padding: 12px 16px;
+    gap: 14px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+.chat-item:active, .channel-feed-item:active, .call-log-row:active { background-color: #202c33; }
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.chat-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+}
+.chat-info-top { display: flex; justify-content: space-between; align-items: center; }
+.chat-name { font-size: 16px; font-weight: 500; color: #e9edef; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-time { font-size: 12px; color: #8696a0; }
+.chat-preview { font-size: 14px; color: #8696a0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.preview-name { color: #8696a0; }
+
+/* --- STATUS STRIPS --- */
+.section-title-label { font-size: 16px; font-weight: 600; padding: 12px 16px; color: #e9edef; }
+.status-horizontal-strip { display: flex; gap: 14px; padding: 4px 16px 12px 16px; overflow-x: auto; }
+.status-card-box { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 72px; text-align: center; }
+.status-thumbnail { width: 60px; height: 60px; border-radius: 50%; position: relative; background-color: #202c33; }
+.status-thumbnail.rings-active { border: 2px solid #00a884; padding: 2px; background-clip: content-box; }
+.add-status-badge { position: absolute; bottom: 0; right: 0; background-color: #00a884; color: #111b21; border-radius: 50%; width: 20px; height: 20px; font-weight: bold; font-size: 14px; display: flex; justify-content: center; align-items: center; border: 2px solid #0b141a; }
+.status-owner-name { font-size: 12px; color: #d1d7db; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+.channel-header-row { display: flex; justify-content: space-between; align-items: center; padding-right: 16px; }
+.explore-badge-btn { background: none; border: none; color: #00a884; font-size: 14px; font-weight: 600; }
+.unread-pill-counter { background-color: #00a884; color: #111b21; font-size: 12px; font-weight: bold; padding: 2px 7px; border-radius: 12px; }
+
+/* --- COMMUNITIES VIEW --- */
+.comm-item-row { display: flex; align-items: center; padding: 12px 16px; gap: 16px; }
+.comm-square-avatar { width: 48px; height: 48px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 22px; position: relative; }
+.add-comm-sub { position: absolute; bottom: -3px; right: -3px; background-color: #00a884; color: #111b21; border-radius: 50%; width: 18px; height: 18px; font-size: 12px; font-weight: bold; display: flex; justify-content: center; align-items: center; }
+.comm-main-title { font-size: 16px; font-weight: 600; }
+.comm-sub-channel { display: flex; padding: 10px 16px 10px 24px; gap: 14px; align-items: center; }
+
+/* --- CALLS VIEW --- */
+.calls-shortcut-strip { display: flex; padding: 10px 16px; gap: 18px; }
+.shortcut-circle-item { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; color: #d1d7db; }
+.circle-icon-bg { width: 48px; height: 48px; border-radius: 50%; background-color: #202c33; display: flex; justify-content: center; align-items: center; font-size: 18px; }
+.call-type-icon { font-size: 15px; }
+.call-action-trigger { font-size: 18px; color: #00a884; padding-left: 8px; }
+
+/* --- BACKGROUND CONTEXT COLORS --- */
+.bg-blue { background-color: #2b6cb0; }
+.bg-gray { background-color: #2d3748; }
+.bg-purple { background-color: #4a5568; }
+.bg-orange { background-color: #c05621; }
+.bg-teal { background-color: #0c3a2f; }
+.text-green { color: #00a884 !important; }
+.text-red { color: #ef5350 !important; }
+
+/* --- FLOATING ACTION FAB SYSTEM --- */
+.fab-action { position: absolute; right: 16px; bottom: 80px; border-radius: 16px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); cursor: pointer; z-index: 10; }
+.green-fab { width: 56px; height: 56px; background-color: #00a884; }
+.gray-mini-fab { width: 40px; height: 40px; background-color: #202c33; bottom: 150px; right: 24px; }
+
+/* --- FIXED STICKY NAVIGATION BAR --- */
+.bottom-nav {
+    background-color: #0b141a;
+    border-top: 1px solid #222d34;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+}
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #8696a0;
+    font-size: 12px;
+    cursor: pointer;
+    width: 24%;
+}
+.nav-item span {
+    transition: color 0.2s, font-weight 0.2s;
+}
+.nav-item.active span { 
+    color: #e9edef; 
+    font-weight: 600; 
+}
+
+/* FIXED VIEWPORT CONTAINMENT FOR SVG GRAPHICS */
+.nav-svg { 
+    width: 56px;         /* Explicit overall clickable target space */
+    height: 32px;        /* Height window allocation */
+    padding: 4px 16px;   /* Symmetric interior cushioning */
+    border-radius: 20px; 
+    transition: background-color 0.2s; 
+    display: block;      /* Override inline line-height layout algorithms */
+}
+
+/* FORCED VECTOR TARGETING FOR MOBILE RENDER ENGINES */
+.nav-svg path {
+    fill: #8696a0 !important;
+    transition: fill 0.2s;
+}
+.nav-item.active .nav-svg { 
+    background-color: #103629; 
+}
+.nav-item.active .nav-svg path { 
+    fill: #e9edef !important; 
+}

@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+body {
+    background-color: #0b141a;
+    color: #e9edef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    background-color: #111b21;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 24px;
+    position: relative;
+}
+@media (min-width: 425px) {
+    .app-container {
+        height: 85vh;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+}
+.header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.header h1 {
+    color: #00a884;
+    font-size: 32px;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+.header p {
+    color: #8696a0;
+    font-size: 14px;
+    margin: 0;
+}
+.form-group {
+    margin-bottom: 16px;
+}
+input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #202c33;
+    border: 1px solid #2a3942;
+    border-radius: 8px;
+    color: #d1d7db;
+    font-size: 16px;
+    outline: none;
+}
+input:focus {
+    border-color: #00a884;
+}
+input::placeholder {
+    color: #667781;
+}
+.action-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #00a884;
+    color: #111b21;
+    border: none;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.toggle-container {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #8696a0;
+}
+.toggle-link {
+    color: #00a884;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.error-container {
+    background-color: rgba(234, 91, 91, 0.1);
+    border-left: 3px solid #ea5b5b;
+    color: #f18c8c;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    display: none;
+    text-align: center;
+}
+.hidden { display: none !important; }

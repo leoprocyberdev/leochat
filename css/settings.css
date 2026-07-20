@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0b141a;
+    color: #e9edef;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    background-color: #0b141a;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 425px) {
+    .app-container {
+        height: 85vh;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+}
+
+/* TOP NAVIGATION BAR */
+.top-bar {
+    background-color: #0b141a;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.icon-btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.icon-svg {
+    width: 22px;
+    height: 22px;
+    fill: #aebac1;
+    cursor: pointer;
+}
+
+/* SCROLL VIEW */
+.settings-scroll-view {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* PROFILE HEADER */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 16px 24px 16px;
+    position: relative;
+}
+
+/* THOUGHT BUBBLE */
+.thought-bubble {
+    background-color: #202c33;
+    color: #8696a0;
+    padding: 8px 18px;
+    border-radius: 18px;
+    font-size: 13px;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.thought-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #202c33;
+}
+
+.avatar-large {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #00a884;
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    object-fit: cover;
+}
+
+.user-title-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.user-name {
+    font-size: 22px;
+    font-weight: 500;
+    color: #e9edef;
+}
+
+.caret-icon {
+    width: 18px;
+    height: 18px;
+    fill: #8696a0;
+}
+
+.user-handle {
+    font-size: 14px;
+    color: #8696a0;
+    margin-top: 4px;
+}
+
+/* SETTINGS LIST */
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 24px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.setting-item:active {
+    background-color: #202c33;
+}
+
+.setting-item .icon-svg {
+    fill: #8696a0;
+    width: 24px;
+    height: 24px;
+}
+
+.setting-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.setting-title {
+    font-size: 16px;
+    color: #e9edef;
+}
+
+.setting-sub {
+    font-size: 13.5px;
+    color: #8696a0;
+}
