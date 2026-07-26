@@ -2,8 +2,11 @@ const CACHE_NAME = 'leochat-v1';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/css/style.css',
   '/dashboard.html',
+  '/css/dashboard.css',
   '/chat.html',
+  '/css/chat.css',
   '/js/cloudinary.js',
   '/manifest.json'
 ];
