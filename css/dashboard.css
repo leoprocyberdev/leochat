@@ -100,7 +100,7 @@ html, body {
     background: none;
     border: none;
     color: #d1d7db;
-    font-size: 15px;
+    font-size: 16px; /* Prevents mobile safari/chrome automatic page zooming */
     width: 100%;
     outline: none;
 }
@@ -239,11 +239,11 @@ html, body {
     display: flex;
     justify-content: space-around;
     padding: 8px 0 10px 0;
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed so it never scrolls out of view */
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 50;
+    z-index: 999; /* Ensures it stays permanently on top of background panels */
 }
 .nav-item {
     display: flex;
@@ -283,4 +283,4 @@ html, body {
 }
 .nav-item.active .nav-svg path { 
     fill: #e9edef !important; 
-}
+                     }
