@@ -1,3 +1,4 @@
+/* --- GLOBAL LAYOUT FIXES --- */
 * {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -255,6 +256,8 @@ html, body {
     background-color: transparent;
     flex-shrink: 0;
     z-index: 100;
+    position: sticky;
+    bottom: 0;
 }
 .input-pill {
     flex: 1;
@@ -331,5 +334,4 @@ html, body {
 .action-fab.recording-pulse {
     background-color: #ef4444 !important;
     animation: pulseRed 1.5s infinite;
-            }
-    
+}
